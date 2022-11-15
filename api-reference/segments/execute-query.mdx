@@ -1,0 +1,15 @@
+---
+title: "Execute query"
+description: "Run a query"
+api: "POST /v1/segment/execute"
+---
+
+### Body Parameters
+
+<ParamField body="operator" type="string" default="AND" required />
+
+<ParamField body="filters" type="array of strings" required />
+
+<ParamField body="fileType" type="string" default="json" required />
+
+<ParamField body="limit" type="number" default="50" required />

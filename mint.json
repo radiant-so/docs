@@ -1,0 +1,95 @@
+{
+  "name": "Radiant",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#00AFF9",
+    "light": "#32CCFF",
+    "dark": "#00AFF9",
+    "ultraLight": "#E9F4FB",
+    "ultraDark": "#007DA6"
+  },
+  "topbarCtaButton": {
+    "name": "Get Early Access",
+    "url": "https://radiant.so/signup"
+  },
+  "api": {
+    "baseUrl": "https://api.develop.segment.radiant.so",
+    "auth": {
+      "method": "key",
+      "name": "x-api-key"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Segment",
+      "url": "https://segment.radiant.so/"
+    }
+  ],
+  "topAnchor": {
+    "name": "Segment API"
+  },
+  "anchors": [
+    {
+      "name": "Home",
+      "icon": "house",
+      "url": "https://radiant.so"
+    },
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.com/invite/AXZTaepWGb"
+    },
+    {
+      "name": "Twitter",
+      "icon": "twitter",
+      "url": "https://twitter.com/radiant_so"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Segments",
+      "pages": [
+        "api-reference/segments/execute-query",
+        "api-reference/segments/get-segment-by-id",
+        "api-reference/segments/create-shared-segment",
+        "api-reference/segments/get-popular-segments",
+        "api-reference/segments/export-segment-as-json",
+        "api-reference/segments/export-segment-as-cvs"
+      ]
+    },
+    {
+      "group": "Search",
+      "pages": ["api-reference/search/search-for-nft"]
+    },
+    {
+      "group": "Tokens",
+      "pages": ["api-reference/tokens/get-popular-tokens"]
+    },
+    {
+      "group": "NFTs",
+      "pages": ["api-reference/nfts/get-popular-nfts"]
+    },
+    {
+      "group": "Signup",
+      "pages": [
+        "api-reference/signup/chain-alerts",
+        "api-reference/signup/newsletter"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://radiant.so/",
+    "twitter": "https://twitter.com/radiant_so",
+    "discord": "https://discord.com/invite/AXZTaepWGb"
+  },
+  "classes": {
+    "anchors": "group-hover:bg-gradient-to-tr from-[#34444c] to-[#02b3ff]",
+    "activeAnchors": "bg-gradient-to-tr",
+    "topbarCtaButton": "bg-primary hover:opacity-80 text-white rounded-lg px-5 py-2 font-semibold"
+  },
+  "backgroundImage": "/background.png"
+}
