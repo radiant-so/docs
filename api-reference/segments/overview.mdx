@@ -1,0 +1,19 @@
+---
+title: "Overview"
+---
+
+In order to authenticate your requests to the Radiant API, we use API Keys.It is important to keep your API Key private and secure.
+
+## Create API Key
+
+Request your API key [here](https://92oi0iel400.typeform.com/to/CgF917Vg).
+
+## Basic Example
+
+You will need to include your API key as the `x-api-key` header. For an example of how to do this, see the code snippet below:
+
+```bash
+curl 'https://api.segment.radiant.so/v1/segment/f67ec811-1a01-4ad5-83fe-0d743912b138' \
+  -H 'content-type: application/json' \
+  -H 'x-api-key: your-key'
+```

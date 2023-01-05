@@ -1,0 +1,206 @@
+---
+title: "Filters"
+---
+
+## Supported Filters
+
+### Minter
+
+Query wallets that minted a specific NFT.
+
+
+<CodeGroup>
+
+```json run.ts
+const query = {
+    "type": "minter",
+    "chain": "ethereum",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "minAmount": "1"
+}
+```
+
+```typescript minter.type.ts
+interface minter {
+  type: 'minter';
+  chain: 'ethereum' | 'polygon';
+  contractAddress: address;
+  minAmount: number;
+  maxAmount?: number;
+  traits?: traits[];
+}
+```
+
+</CodeGroup>
+
+
+
+### Holder
+
+Query wallets that hold a specific NFT or Token.
+
+<CodeGroup>
+
+```json run.ts
+const query = {
+    "type": "holder",
+    "chain": "ethereum",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "minAmount": "1"
+}
+```
+
+```typescript holder.type.ts
+interface holder {
+  type: 'holder';
+  chain: 'ethereum' | 'polygon';
+  contractAddress: address;
+  minAmount: number;
+  maxAmount?: number;
+  traits?: traits[];
+}
+```
+
+</CodeGroup>
+
+### Seller
+
+Query wallets that sold a specific NFT.
+
+<CodeGroup>
+
+```json run.ts
+const query = {
+    "type": "seller",
+    "chain": "ethereum",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "minAmount": "1"
+}
+```
+
+```typescript seller.type.ts
+interface seller {
+  type: 'seller';
+  chain: 'ethereum' | 'polygon';
+  contractAddress: address;
+  minAmount: number;
+  maxAmount?: number;
+  traits?: traits[];
+}
+```
+
+</CodeGroup>
+
+### Buyer
+
+Query wallets that sold a specific NFT.
+
+
+<CodeGroup>
+
+```json run.ts
+const query = {
+    "type": "buyer",
+    "chain": "ethereum",
+    "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+    "minAmount": "1"
+}
+```
+
+```typescript buyer.type.ts
+interface buyer {
+  type: 'buyer';
+  chain: 'ethereum' | 'polygon';
+  contractAddress: address;
+  minAmount: number;
+  maxAmount?: number;
+  traits?: traits[];
+}
+```
+
+</CodeGroup>
+
+## Examples
+
+### Single Filter
+
+Retrieve all wallets that minted Bored Apes:
+
+```typescript
+{
+    "operator": "AND",
+    "filters": [
+        {
+            "type": "minter",
+            "chain": "ethereum",
+            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+            "minAmount": "1"
+        }
+    ]
+}
+```
+
+Retrieve all wallets that hold at least 3 Bored Apes with golden Fur:
+
+```typescript
+{
+    "operator": "AND",
+    "filters": [
+        {
+            "type": "minter",
+            "chain": "ethereum",
+            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+            "minAmount": "1"
+        }
+    ]
+}
+```
+
+### Combined Filters
+
+
+Retrieve all wallets that minted at least one Bored Ape and one Mutant Ape:
+
+```typescript
+{
+    "operator": "AND",
+    "filters": [
+        {
+            "type": "minter",
+            "chain": "ethereum",
+            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+            "minAmount": "1"
+        },
+        {
+            "type": "minter",
+            "chain": "ethereum",
+            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+            "minAmount": "1"
+        }
+    ]
+}
+```
+
+Retrieve all wallets that minted at least one Bored Ape or one CloneX:
+
+
+
+```typescript
+{
+    "operator": "OR",
+    "filters": [
+        {
+            "type": "minter",
+            "chain": "ethereum",
+            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+            "minAmount": "1"
+        },
+        {
+            "type": "minter",
+            "chain": "ethereum",
+            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+            "minAmount": "1"
+        }
+    ]
+}
+```

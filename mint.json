@@ -52,28 +52,33 @@
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["introduction","signup","faq/faq"]
+      "pages": ["introduction","faq/faq"]
     },
     {
-      "group": "Segments API",
+      "group": "Authentication",
       "pages": [
-        "api-reference/segments/auth",
-        "api-reference/segments/execute-query",
-        "api-reference/segments/get-segment-by-id",
-        "api-reference/segments/create-shared-segment",
-        "api-reference/segments/get-popular-segments",
-        "api-reference/segments/export-segment-as-json",
-        "api-reference/segments/export-segment-as-cvs"
+        "api-reference/auth/overview"
       ]
     },
     {
-      "group": "Search API",
-      "pages": ["api-reference/search/search-for-nft"]
+      "group": "Segments",
+      "pages": [
+        "api-reference/segments/overview",
+        "api-reference/segments/filters",
+        "api-reference/segments/execute-query",
+        "api-reference/segments/get-segment-by-id",
+        "api-reference/segments/export-json",
+        "api-reference/segments/export-cvs"
+      ]
+    },
+    {
+      "group": "Search",
+      "pages": ["api-reference/search/search-nft","api-reference/search/search-erc20"]
     }
     ,
     {
-      "group": "SDK",
-      "pages": ["sdk/coming-soon"]
+      "group": "Coming soon",
+      "pages": ["coming-soon/audiences","coming-soon/sdk","coming-soon/cli"]
     }
   ],
   "footerSocials": {
