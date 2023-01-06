@@ -71,6 +71,10 @@
       ]
     },
     {
+      "group": "Metadata",
+      "pages": ["api-reference/metadata/nft","api-reference/metadata/erc20"]
+    },
+    {
       "group": "Search",
       "pages": ["api-reference/search/search-nft","api-reference/search/search-erc20"]
     },

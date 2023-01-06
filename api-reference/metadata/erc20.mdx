@@ -1,12 +1,10 @@
 ---
 title: "Get ERC20 Metadata"
-api: "POST /v1/search"
+api: "GET /v1/tokens/{chain}/{address}"
 ---
 
-### Body Parameters
+### Path Parameters
 
-<ParamField body="type" type="string" default="token" required />
+<ParamField path="chain" type="string" default="ethereum"  required />
 
-<ParamField body="chain" type="string" default="ethereum" required />
-
-<ParamField body="searchTerm" type="string" default="DAI" required />
+<ParamField path="address" type="string" default="0x1f9840a85d5af5bf1d1762f925bdaddc4201f984"  required />

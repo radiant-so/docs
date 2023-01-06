@@ -1,12 +1,10 @@
 ---
 title: "Get NFT Collection Metadata"
-api: "POST /v1/search"
+api: "GET /v1/nfts/{chain}/{address}"
 ---
 
-### Body Parameters
+### Path Parameters
 
-<ParamField body="type" type="string" default="nft" required />
+<ParamField path="chain" type="string" default="ethereum"  required />
 
-<ParamField body="chain" type="string" default="ethereum" required />
-
-<ParamField body="searchTerm" type="string" default="Bored Ape" required />
+<ParamField path="address" type="string" default="0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d"  required />
