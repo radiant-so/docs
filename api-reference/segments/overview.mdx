@@ -2,18 +2,20 @@
 title: "Overview"
 ---
 
-In order to authenticate your requests to the Radiant API, we use API Keys.It is important to keep your API Key private and secure.
+Segments are blazing fast one-time snapshots that query an audience by defined filters across different chains.
 
-## Create API Key
+**For example you might want to query:**
 
-Request your API key [here](https://92oi0iel400.typeform.com/to/CgF917Vg).
+- All wallets that minted at least 3 Bored Ape Yacht Clubs
+- All wallets that hold at least 100 DAI and own 10 CloneX
+- All wallets that own a Bored Ape with Golden Fur.
 
-## Basic Example
 
-You will need to include your API key as the `x-api-key` header. For an example of how to do this, see the code snippet below:
+## Supported Filter Types
+We currently do support different filter types on Ethereuem & Polygon:
 
-```bash
-curl 'https://api.segment.radiant.so/v1/segment/f67ec811-1a01-4ad5-83fe-0d743912b138' \
-  -H 'content-type: application/json' \
-  -H 'x-api-key: your-key'
-```
+- Holders: Get wallets by their ERC20 & ERC721 Holdings.
+- Minters: Wallets that minted a specific NFT.
+- Buyers / Sellers: Wallets that bought or sold a specific NFT / Token.
+
+A more complete overview of filters can be found [here](./filters).

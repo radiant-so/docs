@@ -23,12 +23,6 @@
       "name": "x-api-key"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Radiant Segment",
-      "url": "https://segment.radiant.so/"
-    }
-  ],
   "topAnchor": {
     "name": "Segment API"
   },
@@ -74,8 +68,7 @@
     {
       "group": "Search",
       "pages": ["api-reference/search/search-nft","api-reference/search/search-erc20"]
-    }
-    ,
+    },
     {
       "group": "Coming soon",
       "pages": ["coming-soon/audiences","coming-soon/sdk","coming-soon/cli"]

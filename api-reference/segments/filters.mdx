@@ -11,7 +11,7 @@ Query wallets that minted a specific NFT.
 
 <CodeGroup>
 
-```json run.ts
+```typescript query.ts
 const query = {
     "type": "minter",
     "chain": "ethereum",
@@ -27,7 +27,6 @@ interface minter {
   contractAddress: address;
   minAmount: number;
   maxAmount?: number;
-  traits?: traits[];
 }
 ```
 
@@ -41,7 +40,7 @@ Query wallets that hold a specific NFT or Token.
 
 <CodeGroup>
 
-```json run.ts
+```typescript query.ts
 const query = {
     "type": "holder",
     "chain": "ethereum",
@@ -69,7 +68,7 @@ Query wallets that sold a specific NFT.
 
 <CodeGroup>
 
-```json run.ts
+```typescript query.ts
 const query = {
     "type": "seller",
     "chain": "ethereum",
@@ -85,7 +84,6 @@ interface seller {
   contractAddress: address;
   minAmount: number;
   maxAmount?: number;
-  traits?: traits[];
 }
 ```
 
@@ -98,7 +96,7 @@ Query wallets that sold a specific NFT.
 
 <CodeGroup>
 
-```json run.ts
+```typescript query.ts
 const query = {
     "type": "buyer",
     "chain": "ethereum",
@@ -114,7 +112,6 @@ interface buyer {
   contractAddress: address;
   minAmount: number;
   maxAmount?: number;
-  traits?: traits[];
 }
 ```
 
@@ -124,7 +121,7 @@ interface buyer {
 
 ### Single Filter
 
-Retrieve all wallets that minted Bored Apes:
+Query all wallets that minted Bored Apes:
 
 ```typescript
 {
@@ -140,17 +137,22 @@ Retrieve all wallets that minted Bored Apes:
 }
 ```
 
-Retrieve all wallets that hold at least 3 Bored Apes with golden Fur:
+Query wallets that hold at least 3 Bored Apes with golden Fur:
 
 ```typescript
 {
     "operator": "AND",
     "filters": [
         {
-            "type": "minter",
+            "type": "holder",
             "chain": "ethereum",
             "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
-            "minAmount": "1"
+            "minAmount": "3",
+            "traits": [
+                {
+                    "Fur": "Solid Gold"
+                }
+            ]
         }
     ]
 }
@@ -159,7 +161,7 @@ Retrieve all wallets that hold at least 3 Bored Apes with golden Fur:
 ### Combined Filters
 
 
-Retrieve all wallets that minted at least one Bored Ape and one Mutant Ape:
+Query wallets that minted at least one Bored Ape and one Mutant Ape:
 
 ```typescript
 {
@@ -174,16 +176,14 @@ Retrieve all wallets that minted at least one Bored Ape and one Mutant Ape:
         {
             "type": "minter",
             "chain": "ethereum",
-            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
+            "contractAddress": "0x60e4d786628fea6478f785a6d7e704777c86a7c6",
             "minAmount": "1"
         }
     ]
 }
 ```
 
-Retrieve all wallets that minted at least one Bored Ape or one CloneX:
-
-
+Retrieve all wallets that minted at least one Bored Ape or 3 Clonex:
 
 ```typescript
 {
@@ -198,8 +198,8 @@ Retrieve all wallets that minted at least one Bored Ape or one CloneX:
         {
             "type": "minter",
             "chain": "ethereum",
-            "contractAddress": "0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d",
-            "minAmount": "1"
+            "contractAddress": "0xc1a12e1404485c85479bef9414b83a99ca4cd478",
+            "minAmount": "3"
         }
     ]
 }
